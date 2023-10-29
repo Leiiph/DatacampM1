@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS or other CSS styles, as needed -->
+    <title>{% block title %}Result Page{% endblock %}</title>
+</head>
+<body style="background-image: url('https://images7.alphacoders.com/115/1154544.jpg'); background-size= cover">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('index') }}">FlaskBlog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div style="width: 50%; height: 30%; background-color: white; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;" id="navbarNav">
+        <h1>Result Page</h1>
+    
+        <p>User Input: {{ user_input }}</p>
+        {% if predicted_genre %}
+            <p>Predicted Genre: {{ predicted_genre }}</p>
+            <p>Recommendations: {{ rec_music }}</p>
+        {% else %}
+            <p>Predicted Genre: Not Available</p>
+        {% endif %}
+    </div>
+    
+
+    <!-- Optional JavaScript and other content as needed -->
+</body>
+</html>

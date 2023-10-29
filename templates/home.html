@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+    <h1 style="color:white;">{% block title %}Welcome to Vibe{% endblock %}</h1>
+
+    <form method="POST" action="{{ url_for('process_text') }}">
+        <div style="width: 50%; height: 40%; background-color: white; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;" class="form-control">
+            <label for="singer_name">Enter Singer's Name:</label>
+            <input type="text" class="form-control" id="singer_name" name="singer_name" placeholder="Enter singer's name">
+            <label for="song_name">Enter Song Name:</label>
+            <input type="text" class="form-control" id="song_name" name="song_name" placeholder="Enter song name", width=40%%>
+            <p></p>
+            
+            <div id="lyric_input_section" style="display: none;">
+                <label for="text_input">Enter lyrics:</label>
+                <input type="text" class="form-control" id="text_input" name="user_input" placeholder="Enter text here">
+            </div>
+            
+            <div id="lyric_invalid_message" style="color: red; display: none;">Lyric input is invalid.</div>
+            
+            <button type="button" id="show_lyric_input_button" class="btn btn-primary">Enter Lyrics</button>
+            <button type="submit" style="display: none;" id="submit_button" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    
+    <script>
+        document.getElementById("show_lyric_input_button").addEventListener("click", function() {
+            document.getElementById("lyric_input_section").style.display = "block";
+            document.getElementById("submit_button").style.display = "block";
+            document.getElementById("show_lyric_input_button").style.display = "none";
+        });
+    </script>
 {% endblock %}
