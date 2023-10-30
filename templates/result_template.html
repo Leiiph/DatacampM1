@@ -6,10 +6,10 @@
     
         <div style="color:white; overflow: auto; white-space: normal; text-align: center;">
             {% if predicted_genre %}
-                <p style="color:white;">Predicted Genre: {{ predicted_genre }}</p>
+                <p style="color:white;">The genre of your song : {{ predicted_genre }}</p>
                 <p style="color:white;">Recommendations: {{ rec_music }}</p>
             {% else %}
-                <p style="color:white;">Predicted Genre: Not Available</p>
+                <p style="color:white;">The genre of your song : Not Available</p>
             {% endif %}
         </div>
     </div>
