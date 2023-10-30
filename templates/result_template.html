@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="width: 45%; height: 40%; background-color: rgba(0,0,0,.5); margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0; border-radius: 25px" class="form-control">
+        <h1 style="color:white">Result Page</h1>
+    
+        {% if predicted_genre %}
+            <p style="color:white">Predicted Genre: {{ predicted_genre }}</p>
+            <p style="color:white">Recommendations: {{ rec_music }}</p>
+        {% else %}
+            <p style="color:white">Predicted Genre: Not Available</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
