@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <br><br>
     <h1 style="color:white; text-align:center">{% block title %}Welcome to Vibe{% endblock %}</h1>
-
     <form method="POST" action="{{ url_for('process_text') }}">
         <div style="width: 45%; height: 40%; background-color: rgba(0,0,0,.5); margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0; border-radius: 25px" class="form-control">
             <label for="singer_name" style="color:white;">Enter Singer's Name:</label>
