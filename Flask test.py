@@ -67,6 +67,8 @@ def process_text():
 
     show_lyric_input = True  # Assume lyric input is shown by default
     lyric_input_invalid = False  # Assume lyric input is valid
+    lyrics_exist = False  # Assume lyrics do not exist in the database by default
+
 
     if singer_name and song_name:
         song_info = de[(de['artist_name'] == singer_name) & (de['track_name'] == song_name)]
@@ -82,11 +84,12 @@ def process_text():
     else:
         lyrics = user_input
 
+
     # The rest of your code to process the lyrics and provide recommendations
-    if lyrics_exist == False:
-        predicted_genre = recommendation(lyrics)
-    else:
+    if lyrics_exist == True:
         predicted_genre = song_info['topic'].values[0]
+    else:
+        predicted_genre = recommendation(lyrics)
 
     return render_template('result_template.html', predicted_genre=str(predicted_genre).title(), rec_music=rec_music(de, predicted_genre), show_lyric_input=show_lyric_input, lyric_input_invalid=lyric_input_invalid)
 
