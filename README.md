@@ -26,3 +26,6 @@ In order to use Vibe, you will need the following libraries:
 - flask
 - sentencepiece
 - transformers
+
+# Link to the github depository:
+https://github.com/Leiiph/DatacampM1.git
