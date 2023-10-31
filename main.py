@@ -12,15 +12,18 @@ from transformers import T5Tokenizer
 app = Flask(__name__)
 
 def load():
+    '''Load the data from the csv'''
     de = pd.read_csv('tcc_ceds_music.csv')
     return de
 
 @app.route('/')
 def index():
+    '''load the main page'''
     return render_template('home.html')
 
 
 def recommendation(input):
+    '''Find the mood of the input lyrics - main function'''
     # Initialize the tokenizer
     tokenizer = T5Tokenizer.from_pretrained("t5-small")
     genres = {0: 'dating', 1: 'violence', 2: 'world/life', 3: 'night/time', 4: 'shake the audience', 5: 'family/gospel', 6: 'romantic', 7: 'communication', 8: 'obscene', 9: 'music', 10: 'movement/places', 11: 'light/visual perceptions', 12: 'family/spiritual', 13: 'like/girls', 14: 'sadness', 15: 'feelings', 16: 'danceability', 17: 'loudness', 18: 'acousticness', 19: 'instrumentalness', 20: 'valence', 21: 'energy'}
@@ -42,6 +45,7 @@ def recommendation(input):
     return predicted_genre
 
 def rec_music(de, predicted_genre):
+    '''Will recommed music based on the predicted genre'''
     stock = de[de['topic'] == predicted_genre]
     if stock.empty:
         return "Sorry, we don't have any recommendation for this genre yet."
@@ -54,6 +58,7 @@ def rec_music(de, predicted_genre):
 
 @app.route('/process_text', methods=['POST'])
 def process_text():
+    '''Process the text input by the user'''
     de = load()
     user_input = request.form.get('user_input')
     singer_name = request.form.get('singer_name')
