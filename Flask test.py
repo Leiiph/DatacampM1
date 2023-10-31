@@ -27,7 +27,7 @@ def recommendation(input):
     # Initialize the tokenizer
     tokenizer = T5Tokenizer.from_pretrained("t5-small")
     genres = {0: 'dating', 1: 'violence', 2: 'world/life', 3: 'night/time', 4: 'shake the audience', 5: 'family/gospel', 6: 'romantic', 7: 'communication', 8: 'obscene', 9: 'music', 10: 'movement/places', 11: 'light/visual perceptions', 12: 'family/spiritual', 13: 'like/girls', 14: 'sadness', 15: 'feelings', 16: 'danceability', 17: 'loudness', 18: 'acousticness', 19: 'instrumentalness', 20: 'valence', 21: 'energy'}
-    model_path = "my_model_d37.h5"
+    model_path = "my_model_d372.h5"
     loaded_model = load_model(model_path)
     # Tokenize the text
     sample_text = input
