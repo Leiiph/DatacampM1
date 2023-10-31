@@ -5,9 +5,6 @@ import pandas as pd
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras import models
 from tensorflow.keras import layers
-import keras
-import transformers
-import sentencepiece
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import sentencepiece as spm
 from transformers import T5Tokenizer
