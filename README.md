@@ -18,3 +18,11 @@ When the website is launched, you just have to enter the song name and artist na
 
 # Accuracy of the model
 Currently, our model has an accuracy of 60%!
+
+# Requirements
+In order to use Vibe, you will need the following libraries:
+- tensorflow (please see main.py for further instructions)
+- Numpy & pandas
+- flask
+- sentencepiece
+- transformers
